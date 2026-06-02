@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailIQ — Executive Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">RetailIQ</span>
+            </div>
+            <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+            <p class="loader-status">Initializing dashboard…</p>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-brand">
+            <span class="brand-icon">◆</span>
+            <span class="brand-text">RetailIQ</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#overview" class="nav-item active" data-section="overview">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Overview</span>
+            </a>
+            <a href="#products" class="nav-item" data-section="products">
+                <span class="nav-icon">📦</span>
+                <span class="nav-label">Products</span>
+            </a>
+            <a href="#forecast" class="nav-item" data-section="forecast">
+                <span class="nav-icon">📈</span>
+                <span class="nav-label">Forecast</span>
+            </a>
+            <a href="#elasticity" class="nav-item" data-section="elasticity">
+                <span class="nav-icon">⚡</span>
+                <span class="nav-label">Elasticity</span>
+            </a>
+            <a href="#recommendations" class="nav-item" data-section="recommendations">
+                <span class="nav-icon">🏷️</span>
+                <span class="nav-label">Markdowns</span>
+            </a>
+            <a href="#whatif" class="nav-item" data-section="whatif">
+                <span class="nav-icon">🔮</span>
+                <span class="nav-label">What-If</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="sidebar-footer-text">v2.1.0 • Live</div>
+        </div>
+    </aside>
+
+    <!-- Mobile Top Bar -->
+    <header class="mobile-header">
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="mobile-brand">
+            <span class="brand-icon">◆</span>
+            <span class="brand-text">RetailIQ</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- ============ SECTION 1: OVERVIEW ============ -->
+        <section id="overview" class="dashboard-section">
+            <div class="section-header">
+                <h1 class="section-title">Revenue Overview</h1>
+                <p class="section-subtitle">Key performance indicators and revenue trends</p>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card" style="--delay: 0.1s">
+                    <div class="kpi-icon kpi-icon-revenue">💰</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Total Revenue</span>
+                        <span class="kpi-value" id="kpi-revenue">—</span>
+                        <span class="kpi-trend up" id="kpi-revenue-trend">
+                            <span class="trend-arrow">↑</span> <span class="trend-val">0%</span> vs last month
+                        </span>
+                    </div>
+                    <canvas class="kpi-sparkline" id="spark-revenue" width="80" height="36"></canvas>
+                </div>
+                <div class="kpi-card" style="--delay: 0.2s">
+                    <div class="kpi-icon kpi-icon-profit">📈</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Total Profit</span>
+                        <span class="kpi-value" id="kpi-profit">—</span>
+                        <span class="kpi-trend up" id="kpi-profit-trend">
+                            <span class="trend-arrow">↑</span> <span class="trend-val">0%</span> vs last month
+                        </span>
+                    </div>
+                    <canvas class="kpi-sparkline" id="spark-profit" width="80" height="36"></canvas>
+                </div>
+                <div class="kpi-card" style="--delay: 0.3s">
+                    <div class="kpi-icon kpi-icon-orders">🛒</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Total Orders</span>
+                        <span class="kpi-value" id="kpi-orders">—</span>
+                        <span class="kpi-trend up" id="kpi-orders-trend">
+                            <span class="trend-arrow">↑</span> <span class="trend-val">0%</span> vs last month
+                        </span>
+                    </div>
+                    <canvas class="kpi-sparkline" id="spark-orders" width="80" height="36"></canvas>
+                </div>
+                <div class="kpi-card" style="--delay: 0.4s">
+                    <div class="kpi-icon kpi-icon-aov">🎯</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Avg Order Value</span>
+                        <span class="kpi-value" id="kpi-aov">—</span>
+                        <span class="kpi-trend up" id="kpi-aov-trend">
+                            <span class="trend-arrow">↑</span> <span class="trend-val">0%</span> vs last month
+                        </span>
+                    </div>
+                    <canvas class="kpi-sparkline" id="spark-aov" width="80" height="36"></canvas>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="charts-grid charts-grid-2">
+                <div class="chart-card" style="--delay: 0.5s">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Monthly Revenue vs Profit</h3>
+                        <span class="chart-badge">Last 12 Months</span>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chart-revenue-profit"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card" style="--delay: 0.6s">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Revenue by Category</h3>
+                        <span class="chart-badge">Current Month</span>
+                    </div>
+                    <div class="chart-body chart-body-donut">
+                        <canvas id="chart-category-donut"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 2: PRODUCTS ============ -->
+        <section id="products" class="dashboard-section">
+            <div class="section-header">
+                <h1 class="section-title">Product Analytics</h1>
+                <p class="section-subtitle">Performance breakdown by product and category</p>
+            </div>
+
+            <div class="charts-grid charts-grid-2">
+                <div class="chart-card" style="--delay: 0.1s">
+                    <div class="chart-header">
+                        <h3 class="chart-title">🏆 Top 10 Best Sellers</h3>
+                        <span class="chart-badge badge-success">By Revenue</span>
+                    </div>
+                    <div class="chart-body chart-body-tall">
+                        <canvas id="chart-best-sellers"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card" style="--delay: 0.2s">
+                    <div class="chart-header">
+                        <h3 class="chart-title">⚠️ Bottom 10 Underperformers</h3>
+                        <span class="chart-badge badge-danger">Needs Attention</span>
+                    </div>
+                    <div class="chart-body chart-body-tall">
+                        <canvas id="chart-worst-sellers"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid charts-grid-1">
+                <div class="chart-card" style="--delay: 0.3s">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Category Performance Comparison</h3>
+                        <span class="chart-badge">Revenue • Profit • Units</span>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="chart-category-performance"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Table -->
+            <div class="chart-card table-card" style="--delay: 0.4s">
+                <div class="chart-header">
+                    <h3 class="chart-title">Product Performance Table</h3>
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="product-search" placeholder="Search products…" class="search-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table" id="product-table">
+                        <thead>
+                            <tr>
+                                <th data-sort="name">Product <span class="sort-icon">⇅</span></th>
+                                <th data-sort="category">Category <span class="sort-icon">⇅</span></th>
+                                <th data-sort="price">Price <span class="sort-icon">⇅</span></th>
+                                <th data-sort="revenue">Revenue <span class="sort-icon">⇅</span></th>
+                                <th data-sort="profit">Profit <span class="sort-icon">⇅</span></th>
+                                <th data-sort="units">Units Sold <span class="sort-icon">⇅</span></th>
+                                <th data-sort="margin">Margin <span class="sort-icon">⇅</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="product-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 3: FORECAST ============ -->
+        <section id="forecast" class="dashboard-section">
+            <div class="section-header">
+                <h1 class="section-title">Demand Forecast</h1>
+                <p class="section-subtitle">Historical trends and AI-powered demand predictions</p>
+            </div>
+
+            <!-- Forecast Metrics -->
+            <div class="kpi-grid kpi-grid-3">
+                <div class="kpi-card kpi-card-sm" style="--delay: 0.1s">
+                    <div class="kpi-icon">🎯</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Forecast Accuracy</span>
+                        <span class="kpi-value" id="forecast-accuracy">—</span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-card-sm" style="--delay: 0.2s">
+                    <div class="kpi-icon">📉</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">MAPE</span>
+                        <span class="kpi-value" id="forecast-mape">—</span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-card-sm" style="--delay: 0.3s">
+                    <div class="kpi-icon">📐</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">RMSE</span>
+                        <span class="kpi-value" id="forecast-rmse">—</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid charts-grid-1">
+                <div class="chart-card" style="--delay: 0.4s">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Demand Forecast</h3>
+                        <div class="chart-controls">
+                            <select id="forecast-category-select" class="styled-select">
+                                <option value="all">All Categories</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="chart-body chart-body-xl">
+                        <canvas id="chart-forecast"></canvas>
+                    </div>
+                    <div class="chart-legend-custom">
+                        <span class="legend-item"><span class="legend-dot" style="background:#667eea"></span> Historical</span>
+                        <span class="legend-item"><span class="legend-dot legend-dot-dashed" style="background:#00d2ff"></span> Forecast</span>
+                        <span class="legend-item"><span class="legend-dot legend-dot-area" style="background:rgba(0,210,255,0.15)"></span> Confidence Interval</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 4: ELASTICITY ============ -->
+        <section id="elasticity" class="dashboard-section">
+            <div class="section-header">
+                <h1 class="section-title">Price Elasticity</h1>
+                <p class="section-subtitle">Understanding price sensitivity across categories</p>
+            </div>
+
+            <div class="charts-grid charts-grid-2">
+                <div class="chart-card" style="--delay: 0.1s">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Elasticity by Category</h3>
+                        <span class="chart-badge">|E| > 1 = Elastic</span>
+                    </div>
+                    <div class="chart-body chart-body-tall">
+                        <canvas id="chart-elasticity"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card" style="--delay: 0.2s">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Price-Demand Curve</h3>
+                        <span class="chart-badge">Simulated</span>
+                    </div>
+                    <div class="chart-body chart-body-tall">
+                        <canvas id="chart-price-demand"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elasticity Cards -->
+            <div class="elasticity-cards" id="elasticity-cards">
+                <!-- Generated by JS -->
+            </div>
+        </section>
+
+        <!-- ============ SECTION 5: RECOMMENDATIONS ============ -->
+        <section id="recommendations" class="dashboard-section">
+            <div class="section-header">
+                <h1 class="section-title">Markdown Recommendations</h1>
+                <p class="section-subtitle">AI-optimized pricing suggestions for maximum profitability</p>
+            </div>
+
+            <!-- Summary KPIs -->
+            <div class="kpi-grid kpi-grid-3">
+                <div class="kpi-card kpi-card-sm" style="--delay: 0.1s">
+                    <div class="kpi-icon">🏷️</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Products Requiring Markdown</span>
+                        <span class="kpi-value" id="rec-count">—</span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-card-sm" style="--delay: 0.2s">
+                    <div class="kpi-icon">📊</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Avg Recommended Discount</span>
+                        <span class="kpi-value" id="rec-avg-discount">—</span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-card-sm" style="--delay: 0.3s">
+                    <div class="kpi-icon">🚀</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Expected Revenue Uplift</span>
+                        <span class="kpi-value" id="rec-uplift">—</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommendations Table -->
+            <div class="chart-card table-card" style="--delay: 0.4s">
+                <div class="chart-header">
+                    <h3 class="chart-title">Discount Recommendations</h3>
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="rec-search" placeholder="Search recommendations…" class="search-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table" id="rec-table">
+                        <thead>
+                            <tr>
+                                <th data-sort="name">Product <span class="sort-icon">⇅</span></th>
+                                <th data-sort="category">Category <span class="sort-icon">⇅</span></th>
+                                <th data-sort="currentPrice">Current Price <span class="sort-icon">⇅</span></th>
+                                <th data-sort="discount">Discount <span class="sort-icon">⇅</span></th>
+                                <th data-sort="newPrice">New Price <span class="sort-icon">⇅</span></th>
+                                <th data-sort="expRevenue">Exp. Revenue <span class="sort-icon">⇅</span></th>
+                                <th data-sort="expProfit">Exp. Profit <span class="sort-icon">⇅</span></th>
+                                <th data-sort="clearance">Clearance <span class="sort-icon">⇅</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="rec-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SECTION 6: WHAT-IF ============ -->
+        <section id="whatif" class="dashboard-section">
+            <div class="section-header">
+                <h1 class="section-title">What-If Analysis</h1>
+                <p class="section-subtitle">Simulate market changes and see projected impact in real-time</p>
+            </div>
+
+            <!-- Sliders -->
+            <div class="whatif-controls">
+                <div class="whatif-slider-card" style="--delay: 0.1s">
+                    <div class="slider-header">
+                        <span class="slider-label">📈 Demand Change</span>
+                        <span class="slider-value" id="slider-demand-val">0%</span>
+                    </div>
+                    <input type="range" id="slider-demand" class="styled-range" min="-30" max="50" value="0" step="1">
+                    <div class="slider-range-labels">
+                        <span>-30%</span><span>0%</span><span>+50%</span>
+                    </div>
+                </div>
+                <div class="whatif-slider-card" style="--delay: 0.2s">
+                    <div class="slider-header">
+                        <span class="slider-label">📦 Inventory Level Change</span>
+                        <span class="slider-value" id="slider-inventory-val">0%</span>
+                    </div>
+                    <input type="range" id="slider-inventory" class="styled-range" min="-30" max="50" value="0" step="1">
+                    <div class="slider-range-labels">
+                        <span>-30%</span><span>0%</span><span>+50%</span>
+                    </div>
+                </div>
+                <div class="whatif-slider-card" style="--delay: 0.3s">
+                    <div class="slider-header">
+                        <span class="slider-label">🏪 Competitor Discount Change</span>
+                        <span class="slider-value" id="slider-competitor-val">0%</span>
+                    </div>
+                    <input type="range" id="slider-competitor" class="styled-range" min="-20" max="20" value="0" step="1">
+                    <div class="slider-range-labels">
+                        <span>-20%</span><span>0%</span><span>+20%</span>
+                    </div>
+                </div>
+                <button id="whatif-reset" class="btn-reset">
+                    <span>↺</span> Reset All
+                </button>
+            </div>
+
+            <!-- Impact KPIs -->
+            <div class="kpi-grid">
+                <div class="kpi-card kpi-card-impact" style="--delay: 0.4s">
+                    <div class="kpi-icon">💰</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Projected Revenue</span>
+                        <span class="kpi-value" id="wi-revenue">—</span>
+                        <span class="kpi-trend" id="wi-revenue-trend">
+                            <span class="trend-arrow">→</span> <span class="trend-val">0%</span> change
+                        </span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-card-impact" style="--delay: 0.5s">
+                    <div class="kpi-icon">📈</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Projected Profit</span>
+                        <span class="kpi-value" id="wi-profit">—</span>
+                        <span class="kpi-trend" id="wi-profit-trend">
+                            <span class="trend-arrow">→</span> <span class="trend-val">0%</span> change
+                        </span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-card-impact" style="--delay: 0.6s">
+                    <div class="kpi-icon">🛒</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Projected Orders</span>
+                        <span class="kpi-value" id="wi-orders">—</span>
+                        <span class="kpi-trend" id="wi-orders-trend">
+                            <span class="trend-arrow">→</span> <span class="trend-val">0%</span> change
+                        </span>
+                    </div>
+                </div>
+                <div class="kpi-card kpi-card-impact" style="--delay: 0.7s">
+                    <div class="kpi-icon">📊</div>
+                    <div class="kpi-body">
+                        <span class="kpi-label">Avg Discount</span>
+                        <span class="kpi-value" id="wi-discount">—</span>
+                        <span class="kpi-trend" id="wi-discount-trend">
+                            <span class="trend-arrow">→</span> <span class="trend-val">0%</span> change
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What-If Updated Recommendations Table -->
+            <div class="chart-card table-card" style="--delay: 0.8s">
+                <div class="chart-header">
+                    <h3 class="chart-title">Adjusted Recommendations</h3>
+                    <span class="chart-badge badge-info">Simulated</span>
+                </div>
+                <div class="table-wrapper table-wrapper-sm">
+                    <table class="data-table" id="whatif-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Current Price</th>
+                                <th>New Discount</th>
+                                <th>New Price</th>
+                                <th>Exp. Revenue</th>
+                                <th>Exp. Profit</th>
+                            </tr>
+                        </thead>
+                        <tbody id="whatif-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-inner">
+                <span class="footer-brand">Powered by <strong>RetailIQ</strong> Decision Engine</span>
+                <span class="footer-sep">•</span>
+                <span class="footer-time" id="footer-timestamp"></span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "total_revenue": 20890511216.88,
+  "total_profit": 8282537971.13,
+  "total_orders": 120615,
+  "total_quantity": 7494605,
+  "avg_order_value": 173199.94,
+  "avg_selling_price": 7006.92,
+  "avg_discount_pct": 4.52,
+  "overall_gross_margin": 39.65,
+  "currency": "₹",
+  "discount_effectiveness": {
+    "promo_orders": 24203,
+    "non_promo_orders": 96412,
+    "promo_revenue": 4631883069.75,
+    "non_promo_revenue": 16258628147.13,
+    "avg_promo_discount_pct": 22.53,
+    "revenue_per_discount_pct": 205630188.08
+  }
+}

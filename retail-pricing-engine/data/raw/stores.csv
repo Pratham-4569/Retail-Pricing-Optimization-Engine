@@ -1,0 +1,6 @@
+store_id,city,region,tier
+S001,Mumbai,West,1
+S002,Delhi,North,1
+S003,Bangalore,South,1
+S004,Chennai,South,2
+S005,Kolkata,East,2

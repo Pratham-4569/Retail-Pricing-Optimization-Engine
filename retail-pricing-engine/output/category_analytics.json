@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Beauty",
+    "total_revenue": 1390860817.23,
+    "total_profit": 778413067.76,
+    "total_quantity": 809365,
+    "total_orders": 18275,
+    "avg_selling_price": 1729.2456492476,
+    "avg_discount_pct": 4.61,
+    "gross_margin_pct": 55.97
+  },
+  {
+    "category": "Clothing",
+    "total_revenue": 3959757025.27,
+    "total_profit": 1954310566.06,
+    "total_quantity": 924614,
+    "total_orders": 18275,
+    "avg_selling_price": 4001.0786812586,
+    "avg_discount_pct": 4.48,
+    "gross_margin_pct": 49.35
+  },
+  {
+    "category": "Electronics",
+    "total_revenue": 8465376135.89,
+    "total_profit": 2773497320.17,
+    "total_quantity": 299718,
+    "total_orders": 18275,
+    "avg_selling_price": 27259.0071474692,
+    "avg_discount_pct": 4.44,
+    "gross_margin_pct": 32.76
+  },
+  {
+    "category": "Grocery",
+    "total_revenue": 2796847901.74,
+    "total_profit": 942079181.99,
+    "total_quantity": 4593590,
+    "total_orders": 29240,
+    "avg_selling_price": 623.6285947332,
+    "avg_discount_pct": 4.53,
+    "gross_margin_pct": 33.68
+  },
+  {
+    "category": "Home & Kitchen",
+    "total_revenue": 2557912570.44,
+    "total_profit": 1127223531.51,
+    "total_quantity": 427942,
+    "total_orders": 18275,
+    "avg_selling_price": 7878.6331846785,
+    "avg_discount_pct": 4.48,
+    "gross_margin_pct": 44.07
+  },
+  {
+    "category": "Sports",
+    "total_revenue": 1719756766.31,
+    "total_profit": 707014303.64,
+    "total_quantity": 439376,
+    "total_orders": 18275,
+    "avg_selling_price": 4379.8930232558,
+    "avg_discount_pct": 4.57,
+    "gross_margin_pct": 41.11
+  }
+]

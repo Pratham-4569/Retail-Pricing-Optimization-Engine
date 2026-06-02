@@ -1,0 +1,401 @@
+{
+  "category_elasticity": [
+    {
+      "category": "Beauty",
+      "elasticity": -1.2,
+      "intercept": 2.9806,
+      "r2": 0.0077,
+      "n_obs": 18275,
+      "classification": "unit_elastic"
+    },
+    {
+      "category": "Clothing",
+      "elasticity": 0.2685,
+      "intercept": 1.6566,
+      "r2": 0.228,
+      "n_obs": 18275,
+      "classification": "inelastic"
+    },
+    {
+      "category": "Electronics",
+      "elasticity": -2.0,
+      "intercept": 3.6885,
+      "r2": 0.0035,
+      "n_obs": 18275,
+      "classification": "elastic"
+    },
+    {
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 5.3871,
+      "r2": 0.0178,
+      "n_obs": 29240,
+      "classification": "inelastic"
+    },
+    {
+      "category": "Home & Kitchen",
+      "elasticity": -0.257,
+      "intercept": 5.1623,
+      "r2": 0.3521,
+      "n_obs": 18275,
+      "classification": "inelastic"
+    },
+    {
+      "category": "Sports",
+      "elasticity": -0.5252,
+      "intercept": 7.3806,
+      "r2": 0.2361,
+      "n_obs": 18275,
+      "classification": "inelastic"
+    }
+  ],
+  "product_elasticity": [
+    {
+      "product_id": "P001",
+      "product_name": "Atta",
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 8.2957,
+      "r2": 0.0482,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P002",
+      "product_name": "Basmati Rice",
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 7.809,
+      "r2": 0.0441,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P003",
+      "product_name": "Sunflower Oil",
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 7.3921,
+      "r2": 0.0447,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P004",
+      "product_name": "Toor Dal",
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 8.8538,
+      "r2": 0.0503,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P005",
+      "product_name": "Sugar",
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 7.9757,
+      "r2": 0.0401,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P006",
+      "product_name": "Assam Tea",
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 8.2837,
+      "r2": 0.0656,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P007",
+      "product_name": "Filter Coffee",
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 8.4352,
+      "r2": 0.0571,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P008",
+      "product_name": "Biscuits",
+      "category": "Grocery",
+      "elasticity": -0.5,
+      "intercept": 7.4581,
+      "r2": 0.0438,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P009",
+      "product_name": "Wireless Earbuds",
+      "category": "Electronics",
+      "elasticity": -2.0489,
+      "intercept": 22.7789,
+      "r2": 0.424,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P010",
+      "product_name": "Fast Charger",
+      "category": "Electronics",
+      "elasticity": -2.1284,
+      "intercept": 23.3774,
+      "r2": 0.4392,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P011",
+      "product_name": "Power Bank",
+      "category": "Electronics",
+      "elasticity": -2.1386,
+      "intercept": 23.8354,
+      "r2": 0.443,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P012",
+      "product_name": "Smart Watch",
+      "category": "Electronics",
+      "elasticity": -1.9933,
+      "intercept": 24.7063,
+      "r2": 0.4512,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P013",
+      "product_name": "Tablet",
+      "category": "Electronics",
+      "elasticity": -2.0932,
+      "intercept": 23.3138,
+      "r2": 0.455,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P014",
+      "product_name": "Cotton T-Shirt",
+      "category": "Clothing",
+      "elasticity": -1.5128,
+      "intercept": 16.1125,
+      "r2": 0.3094,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P015",
+      "product_name": "Slim-Fit Jeans",
+      "category": "Clothing",
+      "elasticity": -1.5397,
+      "intercept": 13.4952,
+      "r2": 0.32,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P016",
+      "product_name": "Kurta Set",
+      "category": "Clothing",
+      "elasticity": -1.4937,
+      "intercept": 16.5231,
+      "r2": 0.3247,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P017",
+      "product_name": "Silk Saree",
+      "category": "Clothing",
+      "elasticity": -1.5191,
+      "intercept": 16.9089,
+      "r2": 0.3219,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P018",
+      "product_name": "Winter Jacket",
+      "category": "Clothing",
+      "elasticity": -1.5045,
+      "intercept": 17.2082,
+      "r2": 0.3155,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P019",
+      "product_name": "Herbal Shampoo",
+      "category": "Beauty",
+      "elasticity": -1.1911,
+      "intercept": 12.7654,
+      "r2": 0.2236,
+      "n_obs": 3655,
+      "classification": "unit_elastic"
+    },
+    {
+      "product_id": "P020",
+      "product_name": "Face Cream",
+      "category": "Beauty",
+      "elasticity": -1.2386,
+      "intercept": 12.3325,
+      "r2": 0.2412,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P021",
+      "product_name": "Matte Lipstick",
+      "category": "Beauty",
+      "elasticity": -1.2171,
+      "intercept": 13.441,
+      "r2": 0.2402,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P022",
+      "product_name": "Eau de Perfume",
+      "category": "Beauty",
+      "elasticity": -1.329,
+      "intercept": 13.9219,
+      "r2": 0.279,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P023",
+      "product_name": "Coconut Hair Oil",
+      "category": "Beauty",
+      "elasticity": -1.2212,
+      "intercept": 11.4336,
+      "r2": 0.23,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P024",
+      "product_name": "Non-Stick Cookware",
+      "category": "Home & Kitchen",
+      "elasticity": -0.257,
+      "intercept": 12.6043,
+      "r2": 0.1688,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P025",
+      "product_name": "Cotton Bedsheet",
+      "category": "Home & Kitchen",
+      "elasticity": -0.257,
+      "intercept": 9.5899,
+      "r2": 0.1693,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P026",
+      "product_name": "Blackout Curtains",
+      "category": "Home & Kitchen",
+      "elasticity": -0.257,
+      "intercept": 12.2081,
+      "r2": 0.1803,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P027",
+      "product_name": "Mixer Grinder",
+      "category": "Home & Kitchen",
+      "elasticity": -0.257,
+      "intercept": 12.2025,
+      "r2": 0.1721,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P028",
+      "product_name": "Steam Iron",
+      "category": "Home & Kitchen",
+      "elasticity": -0.257,
+      "intercept": 12.2083,
+      "r2": 0.1875,
+      "n_obs": 3655,
+      "classification": "inelastic"
+    },
+    {
+      "product_id": "P029",
+      "product_name": "Kashmir Willow Cricket Bat",
+      "category": "Sports",
+      "elasticity": -1.3138,
+      "intercept": 14.0285,
+      "r2": 0.267,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P030",
+      "product_name": "Yoga Mat",
+      "category": "Sports",
+      "elasticity": -1.3277,
+      "intercept": 14.6836,
+      "r2": 0.2617,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P031",
+      "product_name": "Running Shoes",
+      "category": "Sports",
+      "elasticity": -1.2951,
+      "intercept": 12.9455,
+      "r2": 0.2536,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P032",
+      "product_name": "Football",
+      "category": "Sports",
+      "elasticity": -1.4256,
+      "intercept": 15.4227,
+      "r2": 0.2747,
+      "n_obs": 3655,
+      "classification": "elastic"
+    },
+    {
+      "product_id": "P033",
+      "product_name": "Gym Gloves",
+      "category": "Sports",
+      "elasticity": -1.3719,
+      "intercept": 13.8708,
+      "r2": 0.2616,
+      "n_obs": 3655,
+      "classification": "elastic"
+    }
+  ],
+  "multifeature_model": {
+    "coefficients": {
+      "ln_price": -0.7589,
+      "is_promotion": 0.1145,
+      "month": 0.0425,
+      "ln_comp_price": 0.2561,
+      "intercept": 7.3072
+    },
+    "r2": 0.5625,
+    "n_obs": 120615,
+    "feature_names": [
+      "ln_price",
+      "is_promotion",
+      "month",
+      "ln_comp_price"
+    ]
+  }
+}

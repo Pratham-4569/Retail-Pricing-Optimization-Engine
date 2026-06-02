@@ -1,0 +1,259 @@
+{
+  "discount_range": {
+    "min": 0.0,
+    "max": 50.0,
+    "step": 5
+  },
+  "products": [
+    {
+      "product_id": "P001",
+      "product_name": "Atta",
+      "category": "Grocery",
+      "base_price": 593.08,
+      "cost": 412.23
+    },
+    {
+      "product_id": "P002",
+      "product_name": "Basmati Rice",
+      "category": "Grocery",
+      "base_price": 918.05,
+      "cost": 565.15
+    },
+    {
+      "product_id": "P003",
+      "product_name": "Sunflower Oil",
+      "category": "Grocery",
+      "base_price": 134.22,
+      "cost": 92.16
+    },
+    {
+      "product_id": "P004",
+      "product_name": "Toor Dal",
+      "category": "Grocery",
+      "base_price": 1076.71,
+      "cost": 648.24
+    },
+    {
+      "product_id": "P005",
+      "product_name": "Sugar",
+      "category": "Grocery",
+      "base_price": 1257.04,
+      "cost": 780.92
+    },
+    {
+      "product_id": "P006",
+      "product_name": "Assam Tea",
+      "category": "Grocery",
+      "base_price": 315.94,
+      "cost": 199.18
+    },
+    {
+      "product_id": "P007",
+      "product_name": "Filter Coffee",
+      "category": "Grocery",
+      "base_price": 676.32,
+      "cost": 425.49
+    },
+    {
+      "product_id": "P008",
+      "product_name": "Biscuits",
+      "category": "Grocery",
+      "base_price": 252.27,
+      "cost": 158.73
+    },
+    {
+      "product_id": "P009",
+      "product_name": "Wireless Earbuds",
+      "category": "Electronics",
+      "base_price": 23075.46,
+      "cost": 14503.33
+    },
+    {
+      "product_id": "P010",
+      "product_name": "Fast Charger",
+      "category": "Electronics",
+      "base_price": 25954.6,
+      "cost": 15812.62
+    },
+    {
+      "product_id": "P011",
+      "product_name": "Power Bank",
+      "category": "Electronics",
+      "base_price": 30573.47,
+      "cost": 17336.76
+    },
+    {
+      "product_id": "P012",
+      "product_name": "Smart Watch",
+      "category": "Electronics",
+      "base_price": 47469.83,
+      "cost": 30692.25
+    },
+    {
+      "product_id": "P013",
+      "product_name": "Tablet",
+      "category": "Electronics",
+      "base_price": 15578.38,
+      "cost": 8720.27
+    },
+    {
+      "product_id": "P014",
+      "product_name": "Cotton T-Shirt",
+      "category": "Clothing",
+      "base_price": 3801.14,
+      "cost": 1590.04
+    },
+    {
+      "product_id": "P015",
+      "product_name": "Slim-Fit Jeans",
+      "category": "Clothing",
+      "base_price": 757.91,
+      "cost": 406.54
+    },
+    {
+      "product_id": "P016",
+      "product_name": "Kurta Set",
+      "category": "Clothing",
+      "base_price": 5468.92,
+      "cost": 2443.28
+    },
+    {
+      "product_id": "P017",
+      "product_name": "Silk Saree",
+      "category": "Clothing",
+      "base_price": 4600.33,
+      "cost": 1967.69
+    },
+    {
+      "product_id": "P018",
+      "product_name": "Winter Jacket",
+      "category": "Clothing",
+      "base_price": 6313.5,
+      "cost": 3415.13
+    },
+    {
+      "product_id": "P019",
+      "product_name": "Herbal Shampoo",
+      "category": "Beauty",
+      "base_price": 3069.92,
+      "cost": 1498.98
+    },
+    {
+      "product_id": "P020",
+      "product_name": "Face Cream",
+      "category": "Beauty",
+      "base_price": 1140.72,
+      "cost": 406.99
+    },
+    {
+      "product_id": "P021",
+      "product_name": "Matte Lipstick",
+      "category": "Beauty",
+      "base_price": 2065.65,
+      "cost": 807.05
+    },
+    {
+      "product_id": "P022",
+      "product_name": "Eau de Perfume",
+      "category": "Beauty",
+      "base_price": 1912.42,
+      "cost": 749.94
+    },
+    {
+      "product_id": "P023",
+      "product_name": "Coconut Hair Oil",
+      "category": "Beauty",
+      "base_price": 876.44,
+      "cost": 412.22
+    },
+    {
+      "product_id": "P024",
+      "product_name": "Non-Stick Cookware",
+      "category": "Home & Kitchen",
+      "base_price": 14807.24,
+      "cost": 8378.48
+    },
+    {
+      "product_id": "P025",
+      "product_name": "Cotton Bedsheet",
+      "category": "Home & Kitchen",
+      "base_price": 381.18,
+      "cost": 218.16
+    },
+    {
+      "product_id": "P026",
+      "product_name": "Blackout Curtains",
+      "category": "Home & Kitchen",
+      "base_price": 11016.41,
+      "cost": 6231.88
+    },
+    {
+      "product_id": "P027",
+      "product_name": "Mixer Grinder",
+      "category": "Home & Kitchen",
+      "base_price": 5569.45,
+      "cost": 2603.05
+    },
+    {
+      "product_id": "P028",
+      "product_name": "Steam Iron",
+      "category": "Home & Kitchen",
+      "base_price": 9462.48,
+      "cost": 4727.78
+    },
+    {
+      "product_id": "P029",
+      "product_name": "Kashmir Willow Cricket Bat",
+      "category": "Sports",
+      "base_price": 3454.33,
+      "cost": 1722.94
+    },
+    {
+      "product_id": "P030",
+      "product_name": "Yoga Mat",
+      "category": "Sports",
+      "base_price": 6556.8,
+      "cost": 3823.15
+    },
+    {
+      "product_id": "P031",
+      "product_name": "Running Shoes",
+      "category": "Sports",
+      "base_price": 1636.15,
+      "cost": 911.31
+    },
+    {
+      "product_id": "P032",
+      "product_name": "Football",
+      "category": "Sports",
+      "base_price": 5832.13,
+      "cost": 3298.92
+    },
+    {
+      "product_id": "P033",
+      "product_name": "Gym Gloves",
+      "category": "Sports",
+      "base_price": 5465.96,
+      "cost": 2810.22
+    }
+  ],
+  "categories": [
+    "Beauty",
+    "Clothing",
+    "Electronics",
+    "Grocery",
+    "Home & Kitchen",
+    "Sports"
+  ],
+  "simulation_discounts": [
+    0.0,
+    5.0,
+    10.0,
+    15.0,
+    20.0,
+    25.0,
+    30.0,
+    40.0,
+    50.0
+  ]
+}
